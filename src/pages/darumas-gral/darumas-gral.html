@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle >
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Mis Darumas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="colorFondo" padding-horizontal>
+  <ion-row class="paddingVerticalM centrarG"  align-items-end>
+    <p ion-text color="rosa" padding-left no-margin>
+        <b>Bienvenid&#64;: </b><span ion-text color="dark">{{ usuario }}</span>
+    </p>
+  </ion-row>
+  <ion-row justify-content-center padding-horizontal >
+    <div ion-col col-12 col-sm-6>
+        <button color="verde" ion-button type="button"
+          block full icon-left (click)="goToScanQr()" class="sombra">
+            <ion-icon name="qr-scanner"></ion-icon>
+            Agregar Daruma
+        </button>
+      </div>
+  </ion-row>
+  <ion-row class="paddingVerticalM centrarG"  align-items-end>
+    <div ion-col col-6>
+      <p ion-text color="rosa" padding-left no-margin>
+          <b>Elige un Daruma:</b>
+      </p>
+    </div>
+  </ion-row>
+  <!-- Lista de darumas -->
+  <ion-list>
+    <ion-row justify-content-center padding-horizontal
+      *ngIf="noDarumaFlag == true">
+          <h3 ion-text color="azul">¡A&uacute;n no tienes Darumas!</h3>
+    </ion-row>
+
+    <ion-item (click)="goToDetalle(daruma.qrcode, toki)" *ngFor="let daruma of darumas">
+      <ion-thumbnail item-start *ngIf="daruma.estado == 6">
+        <img src="../../assets/imgs/DarumaUnOjo.png ">
+      </ion-thumbnail>
+      <ion-thumbnail style="opacity: 0.5;" item-start *ngIf="daruma.estado == 8">
+        <img src="../../assets/imgs/DarumaDosOjo.png ">
+      </ion-thumbnail>
+      <h2>{{daruma.descripcion}}</h2>
+      <p>{{daruma.fechaInicio }}</p>
+      <p style="color: black" *ngIf="daruma.estado == 6" >Activo</p>
+      <p *ngIf="daruma.estado == 8" >
+        <span>{{daruma.fechaCompletado }}</span>
+        Completado
+      </p>
+      <button ion-button clear item-end>Ver</button>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<!-- Footer -->
+<ion-footer>
+  <ion-grid no-padding>
+    <ion-row no-padding>
+      <div ion-col col-12 text-center no-padding>
+        <small>Powered by <strong>Devstar Novatech.</strong></small>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
