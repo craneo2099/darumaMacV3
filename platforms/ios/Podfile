@@ -6,3 +6,4 @@ target 'Daruma Koinobori' do
 	project 'Daruma Koinobori.xcodeproj'
 
 end
+pod 'AppCenter'
