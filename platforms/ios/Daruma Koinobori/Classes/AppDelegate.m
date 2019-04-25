@@ -27,20 +27,11 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-@import AppCenter;
-@import AppCenterAnalytics;
-@import AppCenterCrashes;
-
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
-    [MSAppCenter start:@"4dff0fb9-9932-4682-8dcd-08af9b5831fc" withServices:@[
-        [MSAnalytics class],
-        [MSCrashes class]
-    ]];
-    
     self.viewController = [[MainViewController alloc] init];
     return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }

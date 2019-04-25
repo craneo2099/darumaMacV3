@@ -177,6 +177,7 @@ export class AddDarumaQrPage {
     let alert = this.alertCtrl.create({
       title: titulo,
       subTitle: texto,
+      enableBackdropDismiss: false,
       buttons: ['Ok']
     });
 

@@ -3,7 +3,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { InicioLoginPage } from '../inicio-login/inicio-login';
 
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, Keyboard } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController, Keyboard, LoadingController } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -14,12 +14,13 @@ export class RecuperarPage {
   public recuperarForm: FormGroup;
   public imgUrl;
   public tokenR;
-
+  public loader: any;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public ds: DarumaServiceProvider,
     public alertCtrl: AlertController,
     public keyboard : Keyboard,
+    public loadingCtrl: LoadingController,
     public formBuilder: FormBuilder
     ) {
       this.recuperarForm = this.formBuilder.group({
@@ -34,6 +35,8 @@ export class RecuperarPage {
   }
 
   enviarMail(){
+    this.loader = this.loadingCtrl.create();
+    this.loader.present();
     console.log("correo",this.recuperarForm.value.correo);
 
     if (this.recuperarForm.get('correo').hasError('required') ||
@@ -94,6 +97,7 @@ export class RecuperarPage {
     let alert = this.alertCtrl.create({
       title: titulo,
       subTitle: texto,
+      enableBackdropDismiss: false,
       buttons: ['Ok']
     });
 
@@ -104,11 +108,13 @@ export class RecuperarPage {
     let alert = this.alertCtrl.create({
       title: titulo,
       subTitle: texto,
+      enableBackdropDismiss: false,
       buttons: [
         {
         text: 'Ok',
         handler: () => {
           //console.log('Ok clicked');
+          this.loader.dismiss();
           this.navCtrl.setRoot(InicioLoginPage);
         }
       }]

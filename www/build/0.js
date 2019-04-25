@@ -1,1 +1,42 @@
-webpackJsonp([0],{317:function(a,r,e){"use strict";Object.defineProperty(r,"__esModule",{value:!0});var n=e(0),t=(e(2),e(34),e(115)),_=function(){return function(){}}(),u=e(221),o=e(222),i=e(223),c=e(224),b=e(225),d=e(226),f=e(227),s=e(228),l=e(229),g=e(239),j=e(10),p=e(13),v=e(161),w=e(66);e.d(r,"RegistroPageModuleNgFactory",function(){return k});var k=n.W(_,[],function(a){return n._7([n._8(512,n.i,n.S,[[8,[u.a,o.a,i.a,c.a,b.a,d.a,f.a,s.a,l.a,g.a]],[3,n.i],n.s]),n._8(4608,j.l,j.k,[n.r,[2,j.t]]),n._8(4608,p.w,p.w,[]),n._8(4608,p.d,p.d,[]),n._8(512,j.b,j.b,[]),n._8(512,p.u,p.u,[]),n._8(512,p.j,p.j,[]),n._8(512,p.r,p.r,[]),n._8(512,v.a,v.a,[]),n._8(512,v.b,v.b,[]),n._8(512,_,_,[]),n._8(256,w.a,t.a,[])])})}});
+webpackJsonp([0],{
+
+/***/ 336:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RegistroPageModule", function() { return RegistroPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__registro__ = __webpack_require__(118);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var RegistroPageModule = (function () {
+    function RegistroPageModule() {
+    }
+    RegistroPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__registro__["a" /* RegistroPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__registro__["a" /* RegistroPage */]),
+            ],
+        })
+    ], RegistroPageModule);
+    return RegistroPageModule;
+}());
+
+//# sourceMappingURL=registro.module.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=0.js.map

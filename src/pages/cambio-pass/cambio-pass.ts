@@ -129,6 +129,7 @@ export class CambioPassPage {
       title: titulo,
       subTitle: sub,
       message: texto,
+      enableBackdropDismiss: false,
       buttons: ['Ok']
     });
 

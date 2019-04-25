@@ -41,6 +41,7 @@ export class AjustesPage {
       title: titulo,
       subTitle: sub,
       message: texto,
+      enableBackdropDismiss: false,
       buttons: ['Ok']
     });
 
@@ -52,6 +53,7 @@ export class AjustesPage {
       title: titulo,
       subTitle: texto,
       message: mensaje,
+      enableBackdropDismiss: false,
       // enableBackdropDismiss: false,
       buttons: [
         {

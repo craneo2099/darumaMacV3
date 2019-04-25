@@ -1,1 +1,42 @@
-webpackJsonp([4],{313:function(a,e,r){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var n=r(0),t=(r(2),r(34),r(117)),u=function(){return function(){}}(),_=r(221),o=r(222),c=r(223),i=r(224),b=r(225),d=r(226),f=r(227),l=r(228),s=r(229),j=r(235),p=r(10),v=r(13),w=r(161),g=r(66);r.d(e,"DetalleDarumaPageModuleNgFactory",function(){return k});var k=n.W(u,[],function(a){return n._7([n._8(512,n.i,n.S,[[8,[_.a,o.a,c.a,i.a,b.a,d.a,f.a,l.a,s.a,j.a]],[3,n.i],n.s]),n._8(4608,p.l,p.k,[n.r,[2,p.t]]),n._8(4608,v.w,v.w,[]),n._8(4608,v.d,v.d,[]),n._8(512,p.b,p.b,[]),n._8(512,v.u,v.u,[]),n._8(512,v.j,v.j,[]),n._8(512,v.r,v.r,[]),n._8(512,w.a,w.a,[]),n._8(512,w.b,w.b,[]),n._8(512,u,u,[]),n._8(256,g.a,t.a,[])])})}});
+webpackJsonp([4],{
+
+/***/ 332:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetalleDarumaPageModule", function() { return DetalleDarumaPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detalle_daruma__ = __webpack_require__(120);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var DetalleDarumaPageModule = (function () {
+    function DetalleDarumaPageModule() {
+    }
+    DetalleDarumaPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__detalle_daruma__["a" /* DetalleDarumaPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__detalle_daruma__["a" /* DetalleDarumaPage */]),
+            ],
+        })
+    ], DetalleDarumaPageModule);
+    return DetalleDarumaPageModule;
+}());
+
+//# sourceMappingURL=detalle-daruma.module.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=4.js.map

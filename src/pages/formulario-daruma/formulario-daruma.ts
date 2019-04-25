@@ -68,7 +68,18 @@ export class FormularioDarumaPage {
   }
   ionViewDidLoad() {
     //console.log('ionViewDidLoad FormularioDarumaPage');
-    this.fecha = this.datePipe.transform(Date.now(), 'dd/MM/yyyy');
+    
+    let anio = new Date (Date.now()).getFullYear();
+    let mes = new Date (Date.now()).getMonth().toString();
+    if (mes.length < 2) {
+      mes = "0"+mes;  
+    }
+    let dia = new Date (Date.now()).getDate().toString();
+    if (dia.length < 2) {
+      dia = "0"+dia;  
+    }
+
+    this.fecha = dia+"/"+mes+"/"+anio
     //console.log("fecha", this.fecha);
 
   }

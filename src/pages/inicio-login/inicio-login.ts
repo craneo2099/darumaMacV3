@@ -52,7 +52,7 @@ export class InicioLoginPage {
     }
 
   logForm(){
-    this.loader = this.loader = this.loadingCtrl.create();
+    this.loader = this.loadingCtrl.create();
     if (this.loginForm.get('email').hasError('required') || this.loginForm.get('password').hasError('required')) {
       console.log("campo nulo");
       let error="Error!"
@@ -102,6 +102,7 @@ export class InicioLoginPage {
     let alert = this.alertCtrl.create({
       title: titulo,
       subTitle: texto,
+      enableBackdropDismiss: false,
       buttons: ['Ok']
     });
 
@@ -109,13 +110,13 @@ export class InicioLoginPage {
   }
 
   goToRegistro() {
-    this.loader = this.loader = this.loadingCtrl.create();
+    this.loader = this.loadingCtrl.create();
     this.loader.present();
     this.navCtrl.push(RegistroPage);
   }
 
   goToRecuperar(){
-    this.loader = this.loader = this.loadingCtrl.create();
+    this.loader = this.loadingCtrl.create();
     this.loader.present();
     this.navCtrl.push(RecuperarPage);
   }

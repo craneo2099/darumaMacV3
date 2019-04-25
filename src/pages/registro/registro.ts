@@ -182,6 +182,7 @@ export class RegistroPage {
       title: titulo,
       subTitle: texto,
       message: mensaje,
+      enableBackdropDismiss: false,
       buttons: ['Ok']
     });
 
@@ -193,6 +194,7 @@ export class RegistroPage {
       title: titulo,
       subTitle: texto,
       message: mensaje,
+      enableBackdropDismiss: false,
       buttons: [
         {
         text: 'Ok',

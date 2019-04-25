@@ -1,1 +1,42 @@
-webpackJsonp([7],{310:function(a,e,n){"use strict";Object.defineProperty(e,"__esModule",{value:!0});var r=n(0),t=(n(2),n(34),n(119)),u=function(){return function(){}}(),_=n(221),o=n(222),c=n(223),i=n(224),s=n(225),b=n(226),d=n(227),f=n(228),j=n(229),l=n(232),p=n(10),v=n(13),w=n(161),g=n(66);n.d(e,"AjustesPageModuleNgFactory",function(){return k});var k=r.W(u,[],function(a){return r._7([r._8(512,r.i,r.S,[[8,[_.a,o.a,c.a,i.a,s.a,b.a,d.a,f.a,j.a,l.a]],[3,r.i],r.s]),r._8(4608,p.l,p.k,[r.r,[2,p.t]]),r._8(4608,v.w,v.w,[]),r._8(4608,v.d,v.d,[]),r._8(512,p.b,p.b,[]),r._8(512,v.u,v.u,[]),r._8(512,v.j,v.j,[]),r._8(512,v.r,v.r,[]),r._8(512,w.a,w.a,[]),r._8(512,w.b,w.b,[]),r._8(512,u,u,[]),r._8(256,g.a,t.a,[])])})}});
+webpackJsonp([7],{
+
+/***/ 329:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AjustesPageModule", function() { return AjustesPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ajustes__ = __webpack_require__(122);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var AjustesPageModule = (function () {
+    function AjustesPageModule() {
+    }
+    AjustesPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__ajustes__["a" /* AjustesPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__ajustes__["a" /* AjustesPage */]),
+            ],
+        })
+    ], AjustesPageModule);
+    return AjustesPageModule;
+}());
+
+//# sourceMappingURL=ajustes.module.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=7.js.map

@@ -28,17 +28,17 @@ import { HttpModule } from "@angular/http";
 @NgModule({
   declarations: [
     MyApp
-    // ,
-    // AcercaPage,
-    // AddDarumaQrPage,
-    // AjustesPage,
-    // CambioPassPage,
-    // DarumasGralPage,
-    // DetalleDarumaPage,
-    // FormularioDarumaPage,
-    // InicioLoginPage,
-    // RecuperarPage,
-    // RegistroPage
+    ,
+    AcercaPage,
+    AddDarumaQrPage,
+    AjustesPage,
+    CambioPassPage,
+    DarumasGralPage,
+    DetalleDarumaPage,
+    FormularioDarumaPage,
+    InicioLoginPage,
+    RecuperarPage,
+    RegistroPage
   ],
   imports: [
     BrowserModule,

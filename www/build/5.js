@@ -1,1 +1,42 @@
-webpackJsonp([5],{312:function(a,r,n){"use strict";Object.defineProperty(r,"__esModule",{value:!0});var u=n(0),_=(n(2),n(34),n(67)),e=function(){return function(){}}(),t=n(221),o=n(222),c=n(223),i=n(224),b=n(225),d=n(226),f=n(227),s=n(228),l=n(229),j=n(234),p=n(10),v=n(13),w=n(161),g=n(66);n.d(r,"DarumasGralPageModuleNgFactory",function(){return k});var k=u.W(e,[],function(a){return u._7([u._8(512,u.i,u.S,[[8,[t.a,o.a,c.a,i.a,b.a,d.a,f.a,s.a,l.a,j.a]],[3,u.i],u.s]),u._8(4608,p.l,p.k,[u.r,[2,p.t]]),u._8(4608,v.w,v.w,[]),u._8(4608,v.d,v.d,[]),u._8(512,p.b,p.b,[]),u._8(512,v.u,v.u,[]),u._8(512,v.j,v.j,[]),u._8(512,v.r,v.r,[]),u._8(512,w.a,w.a,[]),u._8(512,w.b,w.b,[]),u._8(512,e,e,[]),u._8(256,g.a,_.a,[])])})}});
+webpackJsonp([5],{
+
+/***/ 331:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DarumasGralPageModule", function() { return DarumasGralPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__darumas_gral__ = __webpack_require__(41);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var DarumasGralPageModule = (function () {
+    function DarumasGralPageModule() {
+    }
+    DarumasGralPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__darumas_gral__["a" /* DarumasGralPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__darumas_gral__["a" /* DarumasGralPage */]),
+            ],
+        })
+    ], DarumasGralPageModule);
+    return DarumasGralPageModule;
+}());
+
+//# sourceMappingURL=darumas-gral.module.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=5.js.map

@@ -1,1 +1,42 @@
-webpackJsonp([3],{314:function(a,r,u){"use strict";Object.defineProperty(r,"__esModule",{value:!0});var n=u(0),_=(u(2),u(34),u(118)),e=function(){return function(){}}(),t=u(221),o=u(222),i=u(223),c=u(224),b=u(225),d=u(226),f=u(227),l=u(228),s=u(229),j=u(236),p=u(10),v=u(13),w=u(161),g=u(66);u.d(r,"FormularioDarumaPageModuleNgFactory",function(){return k});var k=n.W(e,[],function(a){return n._7([n._8(512,n.i,n.S,[[8,[t.a,o.a,i.a,c.a,b.a,d.a,f.a,l.a,s.a,j.a]],[3,n.i],n.s]),n._8(4608,p.l,p.k,[n.r,[2,p.t]]),n._8(4608,v.w,v.w,[]),n._8(4608,v.d,v.d,[]),n._8(512,p.b,p.b,[]),n._8(512,v.u,v.u,[]),n._8(512,v.j,v.j,[]),n._8(512,v.r,v.r,[]),n._8(512,w.a,w.a,[]),n._8(512,w.b,w.b,[]),n._8(512,e,e,[]),n._8(256,g.a,_.a,[])])})}});
+webpackJsonp([3],{
+
+/***/ 333:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FormularioDarumaPageModule", function() { return FormularioDarumaPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__formulario_daruma__ = __webpack_require__(121);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var FormularioDarumaPageModule = (function () {
+    function FormularioDarumaPageModule() {
+    }
+    FormularioDarumaPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__formulario_daruma__["a" /* FormularioDarumaPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__formulario_daruma__["a" /* FormularioDarumaPage */]),
+            ],
+        })
+    ], FormularioDarumaPageModule);
+    return FormularioDarumaPageModule;
+}());
+
+//# sourceMappingURL=formulario-daruma.module.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=3.js.map

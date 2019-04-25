@@ -1,1 +1,42 @@
-webpackJsonp([9],{308:function(a,r,e){"use strict";Object.defineProperty(r,"__esModule",{value:!0});var n=e(0),_=(e(2),e(34),e(116)),t=function(){return function(){}}(),u=e(221),c=e(222),o=e(223),i=e(224),b=e(225),d=e(226),f=e(227),s=e(228),l=e(229),j=e(230),p=e(10),v=e(13),w=e(161),g=e(66);e.d(r,"AcercaPageModuleNgFactory",function(){return k});var k=n.W(t,[],function(a){return n._7([n._8(512,n.i,n.S,[[8,[u.a,c.a,o.a,i.a,b.a,d.a,f.a,s.a,l.a,j.a]],[3,n.i],n.s]),n._8(4608,p.l,p.k,[n.r,[2,p.t]]),n._8(4608,v.w,v.w,[]),n._8(4608,v.d,v.d,[]),n._8(512,p.b,p.b,[]),n._8(512,v.u,v.u,[]),n._8(512,v.j,v.j,[]),n._8(512,v.r,v.r,[]),n._8(512,w.a,w.a,[]),n._8(512,w.b,w.b,[]),n._8(512,t,t,[]),n._8(256,g.a,_.a,[])])})}});
+webpackJsonp([9],{
+
+/***/ 327:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AcercaPageModule", function() { return AcercaPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__acerca__ = __webpack_require__(119);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var AcercaPageModule = (function () {
+    function AcercaPageModule() {
+    }
+    AcercaPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__acerca__["a" /* AcercaPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__acerca__["a" /* AcercaPage */]),
+            ],
+        })
+    ], AcercaPageModule);
+    return AcercaPageModule;
+}());
+
+//# sourceMappingURL=acerca.module.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=9.js.map

@@ -2,7 +2,7 @@
   "_args": [
     [
       "cordova-plugin-inappbrowser@3.0.0",
-      "/Users/javierperez/Desktop/Daruma/darumaMacV2"
+      "/Users/javierperez/Desktop/Daruma/darumaMacV3"
     ]
   ],
   "_from": "cordova-plugin-inappbrowser@3.0.0",
@@ -26,7 +26,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/cordova-plugin-inappbrowser/-/cordova-plugin-inappbrowser-3.0.0.tgz",
   "_spec": "3.0.0",
-  "_where": "/Users/javierperez/Desktop/Daruma/darumaMacV2",
+  "_where": "/Users/javierperez/Desktop/Daruma/darumaMacV3",
   "author": {
     "name": "Apache Software Foundation"
   },

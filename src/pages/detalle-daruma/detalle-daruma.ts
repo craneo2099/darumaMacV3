@@ -57,6 +57,7 @@ export class DetalleDarumaPage {
       title: titulo,
       subTitle: texto,
       message: mensaje,
+      enableBackdropDismiss: false,
       buttons: [
         {
           text: 'Regresar',
@@ -95,6 +96,7 @@ export class DetalleDarumaPage {
       title: titulo,
       subTitle: sub,
       message: mensaje,
+      enableBackdropDismiss: false,
       buttons: ['Ok']
     });
 

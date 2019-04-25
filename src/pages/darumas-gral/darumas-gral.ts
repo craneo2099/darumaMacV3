@@ -149,7 +149,11 @@ export class DarumasGralPage {
           // fechaInicio, fechaCompletado
           if (element["fechaInicio"] != null) {
             let inicio: string;
+            // console.log("fechaInicio",element["fechaInicio"]);
+            
             inicio = element["fechaInicio"].replace(/\s/g, "T")
+            // console.log("inicio",inicio);
+            
             element["fechaInicio"] = this.datePipe.transform(inicio, 'dd/MM/yyyy')  
           }
           if (element["fechaCompletado"] != null) {
@@ -186,6 +190,7 @@ export class DarumasGralPage {
       title: titulo,
       subTitle: sub,
       message: mensaje,
+      enableBackdropDismiss: false,
       buttons: ['Ok']
     });
     alert.present();

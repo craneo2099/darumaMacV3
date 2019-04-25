@@ -1,1 +1,42 @@
-webpackJsonp([2],{315:function(a,n,r){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var _=r(0),e=(r(2),r(34),r(63)),t=function(){return function(){}}(),u=r(221),i=r(222),o=r(223),c=r(224),b=r(225),d=r(226),f=r(227),s=r(228),l=r(229),g=r(237),j=r(10),p=r(13),v=r(161),w=r(66);r.d(n,"InicioLoginPageModuleNgFactory",function(){return k});var k=_.W(t,[],function(a){return _._7([_._8(512,_.i,_.S,[[8,[u.a,i.a,o.a,c.a,b.a,d.a,f.a,s.a,l.a,g.a]],[3,_.i],_.s]),_._8(4608,j.l,j.k,[_.r,[2,j.t]]),_._8(4608,p.w,p.w,[]),_._8(4608,p.d,p.d,[]),_._8(512,j.b,j.b,[]),_._8(512,p.u,p.u,[]),_._8(512,p.j,p.j,[]),_._8(512,p.r,p.r,[]),_._8(512,v.a,v.a,[]),_._8(512,v.b,v.b,[]),_._8(512,t,t,[]),_._8(256,w.a,e.a,[])])})}});
+webpackJsonp([2],{
+
+/***/ 335:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InicioLoginPageModule", function() { return InicioLoginPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__inicio_login__ = __webpack_require__(35);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+var InicioLoginPageModule = (function () {
+    function InicioLoginPageModule() {
+    }
+    InicioLoginPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+            declarations: [
+                __WEBPACK_IMPORTED_MODULE_2__inicio_login__["a" /* InicioLoginPage */],
+            ],
+            imports: [
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__inicio_login__["a" /* InicioLoginPage */]),
+            ],
+        })
+    ], InicioLoginPageModule);
+    return InicioLoginPageModule;
+}());
+
+//# sourceMappingURL=inicio-login.module.js.map
+
+/***/ })
+
+});
+//# sourceMappingURL=2.js.map
