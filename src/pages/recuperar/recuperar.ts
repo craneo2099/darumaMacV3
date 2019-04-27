@@ -41,19 +41,22 @@ export class RecuperarPage {
 
     if (this.recuperarForm.get('correo').hasError('required') ||
       this.recuperarForm.get('captcha').hasError('required')) {
-
+      this.loader.dismiss();
       this.doAlert("Error!!!","Campo requerido")
     } else {
       if (this.recuperarForm.get('correo').errors &&
         this.recuperarForm.get('correo').dirty &&
         this.recuperarForm.get('correo').hasError('pattern')) {
          console.log("No entra");
+         this.loader.dismiss();
          this.doAlert("Error!!!","Escribe el correo correctamente")
       }
       else if (this.recuperarForm.get('captcha').hasError('minlength')){
+        this.loader.dismiss();
         this.doAlert("Error!!!", "Captcha: "+this.validation_messages.captcha[1]["message"])
       }
       else if (this.recuperarForm.get('captcha').hasError('maxlength')){
+        this.loader.dismiss();
         this.doAlert("Error!!!", "Captcha: "+this.validation_messages.captcha[2]["message"])
       }
       else {
@@ -66,9 +69,11 @@ export class RecuperarPage {
         this.ds.requerirPass(this.recuperarForm.value.correo, infoCaptcha)
         .subscribe(res2 =>{
           console.log("res2", res2);
+          this.loader.dismiss();
           this.doAlertConfirm("Info","Se ha enviado el correo, Sigue los pasos para reestablecer tu contraseña")
         }, error => {
           console.log("error al registrar", error);
+          this.loader.dismiss();
           this.doAlert("Error!!!","Captcha incorrecto")
         })
       }
@@ -114,7 +119,7 @@ export class RecuperarPage {
         text: 'Ok',
         handler: () => {
           //console.log('Ok clicked');
-          this.loader.dismiss();
+          
           this.navCtrl.setRoot(InicioLoginPage);
         }
       }]

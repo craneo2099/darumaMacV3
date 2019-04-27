@@ -127,7 +127,7 @@ export class InicioLoginPage {
     //console.log('ionViewDidLoad InicioLoginPage');
   }
 
-  ionViewDidLeave(){
+  ionViewWillLeave(){
    this.loader.dismiss();
   }
 }

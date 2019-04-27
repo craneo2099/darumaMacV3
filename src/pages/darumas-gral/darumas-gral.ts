@@ -70,27 +70,6 @@ export class DarumasGralPage {
     }
   }
 
-  verficaNotiYBorra(){
-    //verifica si ya hay una notificacion
-    this.localNotifications.getAll()
-    .then(obtnNoti => {
-      if (obtnNoti.length == 0) {
-        // console.log("obtnNoti: nada");
-      } else {
-        // console.log("obtnNoti", obtnNoti);
-        // console.log("obtnNotiData", JSON.parse(obtnNoti["0"].data)["myData"]);
-        this.localNotifications.cancelAll()
-        .then(cancelNoti => {
-          // console.log("cancelNoti",cancelNoti);
-          this.localNotifications.clearAll()
-          .then(clearNoti => {
-            // console.log("limpiaNoti", clearNoti);
-          }).catch((e: any) => console.log('Error clearAllNotif', e));
-        }).catch((e: any) => console.log('Error cancelAllNotif', e));
-      }
-    }).catch((e: any) => console.log('Error getAllNotif', e));
-  }
-
   goToDetalle(qrcode, token){
     //peticion de daruma y mandarlo
     this.loader = this.loader = this.loadingCtrl.create();
@@ -177,9 +156,28 @@ export class DarumasGralPage {
     }).catch((e: any) => console.log('Error getToken', e));
   }
 
-  obtieneUsuario(){
+  obtieneUsuarioYNotif(){
     this.ds.getUser().then((user)=>{
       this.usuario = user
+      // ciclo Notificaciones verifica y borra
+      // verifica si ya hay una notificacion
+      this.localNotifications.getAll()
+      .then(obtnNoti => {
+        if (obtnNoti.length == 0) {
+          // console.log("obtnNoti: nada");
+        } else {
+          // console.log("obtnNoti", obtnNoti);
+          // console.log("obtnNotiData", JSON.parse(obtnNoti["0"].data)["myData"]);
+          this.localNotifications.cancelAll()
+          .then(cancelNoti => {
+            // console.log("cancelNoti",cancelNoti);
+            this.localNotifications.clearAll()
+            .then(clearNoti => {
+              // console.log("limpiaNoti", clearNoti);
+            }).catch((e: any) => console.log('Error clearAllNotif', e));
+          }).catch((e: any) => console.log('Error cancelAllNotif', e));
+        }
+      }).catch((e: any) => console.log('Error getAllNotif', e));
     }).catch((e: any) => console.log('Error getUser', e));
   }
 
@@ -210,13 +208,13 @@ export class DarumasGralPage {
   }
 
   ionViewWillEnter(){
-    this.obtieneUsuario();
+    this.obtieneUsuarioYNotif();
     this.noDarumaFlag = false;
     this.darumasIncompletos = false;
-    this.verficaNotiYBorra();
   }
 
   ionViewDidEnter(){
+    
     this.darumas = [];
     this.cargaDarumasLst();
   }

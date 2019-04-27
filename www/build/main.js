@@ -563,10 +563,14 @@ var FormularioDarumaPage = (function () {
             selector: 'page-formulario-daruma',template:/*ion-inline-start:"/Users/javierperez/Desktop/Daruma/darumaMacV3/src/pages/formulario-daruma/formulario-daruma.html"*/'\n<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Prop&oacute;sito</ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content class="colorFondo" padding-vertical>\n  <form ion-grid fixed no-padding [formGroup]="logdarumaForm"\n  (ngSubmit)="logdaruForm()">\n  <ion-row justify-content-center padding-vertical>\n    <img class="imgRed2 noMostrarG"\n      src="../../assets/imgs/Koi_DarumaGsinOjosSF.png" alt="Koi_DarumaGsinOjosSF">\n    <img class="noMostrarChico"\n      src="../../assets/imgs/Koi_DarumaGsinOjosSF.png" alt="Koi_DarumaGsinOjosSF">\n  </ion-row>\n\n  <!-- Nombre Daruma -->\n  <ion-row justify-content-center>\n    <ion-list ion-col col-12 col-sm-6 no-margin no-padding>\n      <ion-item>\n        <ion-label floating color="verde">\n         <ion-icon name="add-circle-outline"></ion-icon>\n          Dale nombre a tu Daruma\n        </ion-label>\n        <ion-input type="text" formControlName="nombreDaruma" clearInput="true" aria-required="true"></ion-input>\n      </ion-item>\n    </ion-list>\n  </ion-row>\n  <!-- proposito -->\n  <ion-row justify-content-center>\n    <ion-list ion-col col-12 col-sm-6 no-margin no-padding>\n      <ion-item>\n        <ion-label floating color="verde">\n         <ion-icon name="add-circle-outline"></ion-icon>\n          Escribe tu prop&oacute;sito:\n        </ion-label>\n        <ion-input type="text" formControlName="proposito" clearInput="true" aria-required="true"></ion-input>\n      </ion-item>\n    </ion-list>\n  </ion-row>\n\n<!-- --- -->\n<ion-row justify-content-center padding-horizontal >\n  <div ion-col col-12  col-sm-6 class="colorFondo" >\n    <ion-row>\n      <div ion-col col-6 justify-content-center>\n        <h6 ion-text color="azul">\n          <b>Fecha Inicio:</b>\n        </h6>\n      </div>\n      <div ion-col col-6 justify-content-center>\n        <h6>{{fecha}}</h6>\n      </div>\n    </ion-row>\n  </div>\n</ion-row>\n<!-- boton -->\n<ion-row justify-content-center padding-horizontal>\n  <div ion-col col-12  col-sm-6 class="colorFondo">\n    <button type="submit" color="rosa2" ion-button\n      block full icon-left class="sombra">\n        <ion-icon name="checkmark-circle-outline"></ion-icon>\n        Crear Daruma\n    </button>\n  </div>\n</ion-row>\n</form>\n</ion-content>\n\n<!-- footer -->\n<ion-footer>\n  <ion-grid no-padding>\n    <ion-row no-padding>\n      <div ion-col col-12 text-center no-padding>\n        <small>Powered by <strong>Devstar Novatech.</strong></small>\n      </div>\n    </ion-row>\n  </ion-grid>\n</ion-footer>\n'/*ion-inline-end:"/Users/javierperez/Desktop/Daruma/darumaMacV3/src/pages/formulario-daruma/formulario-daruma.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_2__providers_daruma_service_daruma_service__["a" /* DarumaServiceProvider */]]
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["k" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["k" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_daruma_service_daruma_service__["a" /* DarumaServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_daruma_service_daruma_service__["a" /* DarumaServiceProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_0__angular_common__["d" /* DatePipe */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_common__["d" /* DatePipe */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["l" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["l" /* NavParams */]) === "function" && _f || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5_ionic_angular__["k" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */],
+            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_daruma_service_daruma_service__["a" /* DarumaServiceProvider */],
+            __WEBPACK_IMPORTED_MODULE_0__angular_common__["d" /* DatePipe */],
+            __WEBPACK_IMPORTED_MODULE_5_ionic_angular__["l" /* NavParams */]])
     ], FormularioDarumaPage);
     return FormularioDarumaPage;
-    var _a, _b, _c, _d, _e, _f;
 }());
 
 //# sourceMappingURL=formulario-daruma.js.map
@@ -924,6 +928,7 @@ var RecuperarPage = (function () {
         console.log("correo", this.recuperarForm.value.correo);
         if (this.recuperarForm.get('correo').hasError('required') ||
             this.recuperarForm.get('captcha').hasError('required')) {
+            this.loader.dismiss();
             this.doAlert("Error!!!", "Campo requerido");
         }
         else {
@@ -931,12 +936,15 @@ var RecuperarPage = (function () {
                 this.recuperarForm.get('correo').dirty &&
                 this.recuperarForm.get('correo').hasError('pattern')) {
                 console.log("No entra");
+                this.loader.dismiss();
                 this.doAlert("Error!!!", "Escribe el correo correctamente");
             }
             else if (this.recuperarForm.get('captcha').hasError('minlength')) {
+                this.loader.dismiss();
                 this.doAlert("Error!!!", "Captcha: " + this.validation_messages.captcha[1]["message"]);
             }
             else if (this.recuperarForm.get('captcha').hasError('maxlength')) {
+                this.loader.dismiss();
                 this.doAlert("Error!!!", "Captcha: " + this.validation_messages.captcha[2]["message"]);
             }
             else {
@@ -949,9 +957,11 @@ var RecuperarPage = (function () {
                 this.ds.requerirPass(this.recuperarForm.value.correo, infoCaptcha)
                     .subscribe(function (res2) {
                     console.log("res2", res2);
+                    _this.loader.dismiss();
                     _this.doAlertConfirm("Info", "Se ha enviado el correo, Sigue los pasos para reestablecer tu contraseña");
                 }, function (error) {
                     console.log("error al registrar", error);
+                    _this.loader.dismiss();
                     _this.doAlert("Error!!!", "Captcha incorrecto");
                 });
             }
@@ -987,7 +997,6 @@ var RecuperarPage = (function () {
                     text: 'Ok',
                     handler: function () {
                         //console.log('Ok clicked');
-                        _this.loader.dismiss();
                         _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_2__inicio_login_inicio_login__["a" /* InicioLoginPage */]);
                     }
                 }
@@ -1070,11 +1079,11 @@ var map = {
 		3
 	],
 	"../pages/inicio-login/inicio-login.module": [
-		335,
+		334,
 		2
 	],
 	"../pages/recuperar/recuperar.module": [
-		334,
+		335,
 		1
 	],
 	"../pages/registro/registro.module": [
@@ -1403,8 +1412,8 @@ var AppModule = (function () {
                         { loadChildren: '../pages/darumas-gral/darumas-gral.module#DarumasGralPageModule', name: 'DarumasGralPage', segment: 'darumas-gral', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/detalle-daruma/detalle-daruma.module#DetalleDarumaPageModule', name: 'DetalleDarumaPage', segment: 'detalle-daruma', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/formulario-daruma/formulario-daruma.module#FormularioDarumaPageModule', name: 'FormularioDarumaPage', segment: 'formulario-daruma', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/recuperar/recuperar.module#RecuperarPageModule', name: 'RecuperarPage', segment: 'recuperar', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/inicio-login/inicio-login.module#InicioLoginPageModule', name: 'InicioLoginPage', segment: 'inicio-login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/recuperar/recuperar.module#RecuperarPageModule', name: 'RecuperarPage', segment: 'recuperar', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/registro/registro.module#RegistroPageModule', name: 'RegistroPage', segment: 'registro', priority: 'low', defaultHistory: [] }
                     ]
                 })
@@ -1662,7 +1671,7 @@ var InicioLoginPage = (function () {
         // y saltar la pantalla de login
         //console.log('ionViewDidLoad InicioLoginPage');
     };
-    InicioLoginPage.prototype.ionViewDidLeave = function () {
+    InicioLoginPage.prototype.ionViewWillLeave = function () {
         this.loader.dismiss();
     };
     InicioLoginPage = __decorate([
@@ -1764,28 +1773,6 @@ var DarumasGralPage = (function () {
             }).catch(function (e) { return console.log('Error permisoNotif', e); });
         }
     };
-    DarumasGralPage.prototype.verficaNotiYBorra = function () {
-        var _this = this;
-        //verifica si ya hay una notificacion
-        this.localNotifications.getAll()
-            .then(function (obtnNoti) {
-            if (obtnNoti.length == 0) {
-                // console.log("obtnNoti: nada");
-            }
-            else {
-                // console.log("obtnNoti", obtnNoti);
-                // console.log("obtnNotiData", JSON.parse(obtnNoti["0"].data)["myData"]);
-                _this.localNotifications.cancelAll()
-                    .then(function (cancelNoti) {
-                    // console.log("cancelNoti",cancelNoti);
-                    _this.localNotifications.clearAll()
-                        .then(function (clearNoti) {
-                        // console.log("limpiaNoti", clearNoti);
-                    }).catch(function (e) { return console.log('Error clearAllNotif', e); });
-                }).catch(function (e) { return console.log('Error cancelAllNotif', e); });
-            }
-        }).catch(function (e) { return console.log('Error getAllNotif', e); });
-    };
     DarumasGralPage.prototype.goToDetalle = function (qrcode, token) {
         var _this = this;
         //peticion de daruma y mandarlo
@@ -1867,10 +1854,30 @@ var DarumasGralPage = (function () {
             });
         }).catch(function (e) { return console.log('Error getToken', e); });
     };
-    DarumasGralPage.prototype.obtieneUsuario = function () {
+    DarumasGralPage.prototype.obtieneUsuarioYNotif = function () {
         var _this = this;
         this.ds.getUser().then(function (user) {
             _this.usuario = user;
+            // ciclo Notificaciones verifica y borra
+            // verifica si ya hay una notificacion
+            _this.localNotifications.getAll()
+                .then(function (obtnNoti) {
+                if (obtnNoti.length == 0) {
+                    // console.log("obtnNoti: nada");
+                }
+                else {
+                    // console.log("obtnNoti", obtnNoti);
+                    // console.log("obtnNotiData", JSON.parse(obtnNoti["0"].data)["myData"]);
+                    _this.localNotifications.cancelAll()
+                        .then(function (cancelNoti) {
+                        // console.log("cancelNoti",cancelNoti);
+                        _this.localNotifications.clearAll()
+                            .then(function (clearNoti) {
+                            // console.log("limpiaNoti", clearNoti);
+                        }).catch(function (e) { return console.log('Error clearAllNotif', e); });
+                    }).catch(function (e) { return console.log('Error cancelAllNotif', e); });
+                }
+            }).catch(function (e) { return console.log('Error getAllNotif', e); });
         }).catch(function (e) { return console.log('Error getUser', e); });
     };
     DarumasGralPage.prototype.doAlert = function (titulo, sub, mensaje) {
@@ -1896,10 +1903,9 @@ var DarumasGralPage = (function () {
         }).catch(function (e) { return console.log('Error pltReadycons', e); });
     };
     DarumasGralPage.prototype.ionViewWillEnter = function () {
-        this.obtieneUsuario();
+        this.obtieneUsuarioYNotif();
         this.noDarumaFlag = false;
         this.darumasIncompletos = false;
-        this.verficaNotiYBorra();
     };
     DarumasGralPage.prototype.ionViewDidEnter = function () {
         this.darumas = [];
@@ -1915,7 +1921,7 @@ var DarumasGralPage = (function () {
     };
     DarumasGralPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_4__angular_core__["m" /* Component */])({
-            selector: 'page-darumas-gral',template:/*ion-inline-start:"/Users/javierperez/Desktop/Daruma/darumaMacV3/src/pages/darumas-gral/darumas-gral.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle >\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Mis Darumas</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="colorFondo" padding-horizontal>\n  <ion-row class="paddingVerticalM centrarG"  align-items-end>\n    <p ion-text color="rosa" padding-left no-margin>\n        <b>Bienvenid&#64;: </b><span ion-text color="dark">{{ usuario }}</span>\n    </p>\n  </ion-row>\n  <ion-row justify-content-center padding-horizontal >\n    <div ion-col col-12 col-sm-6>\n        <button color="verde" ion-button type="button"\n          block full icon-left (click)="goToScanQr()" class="sombra">\n            <ion-icon name="qr-scanner"></ion-icon>\n            Agregar Daruma\n        </button>\n      </div>\n  </ion-row>\n  <ion-row class="paddingVerticalM centrarG"  align-items-end>\n    <div ion-col col-6>\n      <p ion-text color="rosa" padding-left no-margin>\n          <b>Elige un Daruma:</b>\n      </p>\n    </div>\n  </ion-row>\n  <!-- Lista de darumas -->\n  <ion-list>\n    <ion-row justify-content-center padding-horizontal\n      *ngIf="noDarumaFlag == true">\n          <h3 ion-text color="azul">¡A&uacute;n no tienes Darumas!</h3>\n    </ion-row>\n\n    <ion-item (click)="goToDetalle(daruma.qrcode, toki)" *ngFor="let daruma of darumas">\n      <ion-thumbnail item-start *ngIf="daruma.estado == 6">\n        <img src="../../assets/imgs/DarumaUnOjo.png ">\n      </ion-thumbnail>\n      <ion-thumbnail style="opacity: 0.5;" item-start *ngIf="daruma.estado == 8">\n        <img src="../../assets/imgs/DarumaDosOjo.png ">\n      </ion-thumbnail>\n      <h2>{{daruma.descripcion}}</h2>\n      <p>{{daruma.fechaInicio }}</p>\n      <p style="color: black" *ngIf="daruma.estado == 6" >Activo</p>\n      <p *ngIf="daruma.estado == 8" >\n        <span>{{daruma.fechaCompletado }}</span>\n        Completado\n      </p>\n      <button ion-button clear item-end>Ver</button>\n    </ion-item>\n  </ion-list>\n\n</ion-content>\n\n<!-- Footer -->\n<ion-footer>\n  <ion-grid no-padding>\n    <ion-row no-padding>\n      <div ion-col col-12 text-center no-padding>\n        <small>Powered by <strong>Devstar Novatech.</strong></small>\n      </div>\n    </ion-row>\n  </ion-grid>\n</ion-footer>\n'/*ion-inline-end:"/Users/javierperez/Desktop/Daruma/darumaMacV3/src/pages/darumas-gral/darumas-gral.html"*/,
+            selector: 'page-darumas-gral',template:/*ion-inline-start:"/Users/javierperez/Desktop/Daruma/darumaMacV3/src/pages/darumas-gral/darumas-gral.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Mis Darumas</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content class="colorFondo" padding-horizontal>\n  <ion-row class="paddingVerticalM centrarG"  align-items-end>\n    <p ion-text color="rosa" padding-left no-margin>\n        <b>Bienvenid&#64;: </b><span ion-text color="dark">{{ usuario }}</span>\n    </p>\n  </ion-row>\n  <ion-row justify-content-center padding-horizontal >\n    <div ion-col col-12 col-sm-6>\n        <button color="verde" ion-button type="button"\n          block full icon-left (click)="goToScanQr()" class="sombra">\n            <ion-icon name="qr-scanner"></ion-icon>\n            Agregar Daruma\n        </button>\n      </div>\n  </ion-row>\n  <ion-row class="paddingVerticalM centrarG"  align-items-end>\n    <div ion-col col-6>\n      <p ion-text color="rosa" padding-left no-margin>\n          <b>Elige un Daruma:</b>\n      </p>\n    </div>\n  </ion-row>\n  <!-- Lista de darumas -->\n  <ion-row>\n  <ion-list>\n    <ion-row justify-content-center padding-horizontal\n      *ngIf="noDarumaFlag == true">\n          <h3 ion-text color="azul">¡A&uacute;n no tienes Darumas!</h3>\n    </ion-row>\n    <ion-row>\n    <ion-item (click)="goToDetalle(daruma.qrcode, toki)" *ngFor="let daruma of darumas">\n      <ion-thumbnail item-start *ngIf="daruma.estado == 6">\n        <img src="../../assets/imgs/DarumaUnOjo.png ">\n      </ion-thumbnail>\n      <ion-thumbnail style="opacity: 0.5;" item-start *ngIf="daruma.estado == 8">\n        <img src="../../assets/imgs/DarumaDosOjo.png ">\n      </ion-thumbnail>\n      <h2>{{daruma.descripcion}}</h2>\n      <p>{{daruma.fechaInicio }}</p>\n      <p style="color: black" *ngIf="daruma.estado == 6" >Activo</p>\n      <p *ngIf="daruma.estado == 8" >\n        <span>{{daruma.fechaCompletado }}</span>\n        Completado\n      </p>\n      <button ion-button clear item-end>Ver</button>\n    </ion-item>\n    </ion-row>\n  </ion-list>\n</ion-row>\n</ion-content>\n\n<!-- Footer -->\n<ion-footer>\n  <ion-grid no-padding>\n    <ion-row no-padding>\n      <div ion-col col-12 text-center no-padding>\n        <small>Powered by <strong>Devstar Novatech.</strong></small>\n      </div>\n    </ion-row>\n  </ion-grid>\n</ion-footer>\n'/*ion-inline-end:"/Users/javierperez/Desktop/Daruma/darumaMacV3/src/pages/darumas-gral/darumas-gral.html"*/,
             providers: [__WEBPACK_IMPORTED_MODULE_1__providers_daruma_service_daruma_service__["a" /* DarumaServiceProvider */]]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_5_ionic_angular__["k" /* NavController */],

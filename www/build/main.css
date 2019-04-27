@@ -60598,10 +60598,6 @@ ion-navbar.toolbar {
   padding-bottom: 8px;
 }
 
-body.keyboard-is-open .hideElementOnKeyboardShown {
-  display: none;
-}
-
 page-acerca ion-slides {
   height: auto;
 }

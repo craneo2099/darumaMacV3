@@ -618,7 +618,7 @@ NSTimer *timer;
     WKWebView* wkWebView = (WKWebView*)_engineWebView;
     NSLog(@"CDVWKWebViewEngine: handleStopScroll");
     [self recursiveStopScroll:[wkWebView scrollView]];
-    [wkWebView evaluateJavaScript:@"window.IonicStopScroll.fire()" completionHandler:nil];
+//    [wkWebView evaluateJavaScript:@"window.IonicStopScroll.fire()" completionHandler:nil];
 }
 
 - (void)recursiveStopScroll:(UIView *)node
