@@ -11,17 +11,22 @@ import { IonicPage, NavController, NavParams, AlertController, Keyboard } from '
 })
 export class AjustesPage {
   private token;
+  public iphoneX;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public ds: DarumaServiceProvider,
     public keyboard: Keyboard,
     public alertCtrl: AlertController) {
+      this.iphoneX = navParams.get("iphoneX");
   }
 
   goToCambioPass(){
     this.navCtrl.push(CambioPassPage,
-      {token:       this.token});
+      {token:       this.token,
+       iphoneX:     this.iphoneX
+      }
+    );
   }
 
   eliminarCuenta(){

@@ -21,6 +21,7 @@ export class DetalleDarumaPage {
   public isEnabled = false;
   public darumas: any;
   public loader: any;
+  public iphoneX;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -36,10 +37,11 @@ export class DetalleDarumaPage {
       this.estado =    navParams.get("estado");
       this.qrCode =    navParams.get("qrCode");
       this.token =     navParams.get("token");
+      this.iphoneX =   navParams.get("iphoneX");
       if (this.estado == 8) {
         this.isEnabled = true;
       }
-      this.darumas = []
+      this.darumas = [];
   }
 
   cambiarEstado(){

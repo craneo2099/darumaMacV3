@@ -15,6 +15,8 @@ export class RecuperarPage {
   public imgUrl;
   public tokenR;
   public loader: any;
+  public iphoneX;
+
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public ds: DarumaServiceProvider,
@@ -32,6 +34,7 @@ export class RecuperarPage {
           Validators.maxLength(6)
         ])]
       });
+      this.iphoneX = navParams.get("iphoneX");
   }
 
   enviarMail(){

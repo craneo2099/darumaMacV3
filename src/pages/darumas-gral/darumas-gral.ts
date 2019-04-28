@@ -22,6 +22,7 @@ export class DarumasGralPage {
   public usuario;
   public noDarumaFlag;
   public darumasIncompletos: boolean;
+  public iphoneX;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -33,7 +34,7 @@ export class DarumasGralPage {
     public alertCtrl: AlertController,
     public menuCtrl: MenuController) {
     //this.alertOfNotification();
-
+    this.iphoneX = navParams.get("iphoneX");
   }
 
   scheduleNotification(){
@@ -99,7 +100,8 @@ export class DarumasGralPage {
           fechaFin:    element["fechaCompletado"],
           estado:      element["estado"],
           qrCode:      element["qrcode"],
-          token:       this.toki
+          token:       this.toki,
+          iphoneX:     this.iphoneX
         });
       })
     }, error => {
@@ -108,7 +110,9 @@ export class DarumasGralPage {
   }
 
   goToScanQr(){
-    this.navCtrl.push(AddDarumaQrPage);
+    this.navCtrl.push(AddDarumaQrPage,
+      {iphoneX: this.iphoneX}
+    );
   }
 
   cargaDarumasLst(){
@@ -223,6 +227,7 @@ export class DarumasGralPage {
     if(this.menuCtrl.isEnabled() == false){
       this.menuCtrl.enable(true);
     }
+    console.log("altooo", this.plt.height());
   }
 
   ionViewDidLeave(){

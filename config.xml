@@ -3,7 +3,7 @@
     <name>Daruma Koinobori</name>
     <description>Daruma Virtual Koinobori Artesanias.</description>
     <author email="contacto@devstar-novatech.com" href="http://devstar-novatech.com/">Devstar Novatech</author>
-    <content original-src="index.html" src="http://192.168.0.11:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />

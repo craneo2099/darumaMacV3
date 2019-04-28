@@ -8,10 +8,12 @@ import { InAppBrowser } from '@ionic-native/in-app-browser';
   templateUrl: 'acerca.html',
 })
 export class AcercaPage {
+public iphoneX;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     private iab: InAppBrowser) {
+      this.iphoneX = navParams.get("iphoneX");
   }
 
   abreInsta(){

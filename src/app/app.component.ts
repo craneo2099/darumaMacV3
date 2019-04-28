@@ -17,6 +17,7 @@ export class MyApp {
   public rootPage:any;
   public pages: Array<{titulo: string, color: string,
     componente: any, icon: string}>
+  public iphoneX;
 
   constructor(public platform: Platform,
     statusBar: StatusBar,
@@ -41,7 +42,10 @@ export class MyApp {
       } else {
         statusBar.styleDefault();
       }
-
+      if (this.platform.height() > 736) {
+        this.iphoneX = true;
+        console.log("iphoneXComp",this.iphoneX);
+      }
       splashScreen.hide();
 
     });
@@ -51,9 +55,13 @@ export class MyApp {
     //console.log(page);
     if (page == InicioLoginPage || page == DarumasGralPage) {
       // Nota: Quita token siempre al cargar inicioPage
-      this.nav.setRoot(page);
+      this.nav.setRoot(page,
+        {iphoneX: this.iphoneX}
+      );
     }else{
-      this.nav.push(page);
+      this.nav.push(page,
+      {iphoneX: this.iphoneX}
+    );
     }
   }
 }

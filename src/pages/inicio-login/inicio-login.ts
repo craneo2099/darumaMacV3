@@ -7,7 +7,7 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 //import { FormularioDarumaPage } from './../formulario-daruma/formulario-daruma';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController,
-  MenuController, LoadingController, Keyboard } from 'ionic-angular';
+  MenuController, LoadingController, Keyboard, Platform } from 'ionic-angular';
 import { RegistroPage } from '../registro/registro';
 import { RecuperarPage } from '../recuperar/recuperar';
 import { DarumasGralPage } from '../darumas-gral/darumas-gral';
@@ -26,6 +26,7 @@ export class InicioLoginPage {
   public token: string;
   minLength = 5;
   public loader: any;
+  public iphoneX = false;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -36,6 +37,7 @@ export class InicioLoginPage {
     public datePipe: DatePipe,
     public loadingCtrl: LoadingController,
     public keyboard: Keyboard,
+    public plt: Platform,
     public menuCtrl: MenuController
     ) {
       this.loginForm = this.formBuilder.group({
@@ -48,6 +50,14 @@ export class InicioLoginPage {
       });
       this.storage.remove('tokenS')
       this.menuCtrl.enable(false)
+      // verifica tamaño de pantalla
+      this.plt.ready().then((readySource) => {
+        console.log("altoooINI", this.plt.height());
+        if (this.plt.height() > 736) {
+          this.iphoneX = true;
+          //console.log("iphoneX",this.iphoneX);
+        }
+      }).catch((e: any) => console.log('Error pltReady', e));
       
     }
 
@@ -89,7 +99,9 @@ export class InicioLoginPage {
           } else {
             this.storage.set('tokenS', data["result"]);
             this.storage.set('userS', this.loginForm.value.email)
-            this.navCtrl.setRoot(DarumasGralPage);
+            this.navCtrl.setRoot(DarumasGralPage,
+              {iphoneX: this.iphoneX}
+            );
           }
         }, error => {
           console.log("errooor",error);
@@ -112,13 +124,17 @@ export class InicioLoginPage {
   goToRegistro() {
     this.loader = this.loadingCtrl.create();
     this.loader.present();
-    this.navCtrl.push(RegistroPage);
+    this.navCtrl.push(RegistroPage, 
+      {iphoneX: this.iphoneX}
+    );
   }
 
   goToRecuperar(){
     this.loader = this.loadingCtrl.create();
     this.loader.present();
-    this.navCtrl.push(RecuperarPage);
+    this.navCtrl.push(RecuperarPage,
+      {iphoneX: this.iphoneX}
+    );
   }
 
   ionViewDidLoad() {

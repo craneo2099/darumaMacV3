@@ -1,9 +1,16 @@
 <ion-menu  [content]="NAV">
 
     <ion-header>
-      <div class="colorFondo" padding>
-          <img src="/assets/imgs/logoKoiHR.png" alt="logoKoiHR">
+      <div *ngIf="iphoneX" class="colorFondo" padding-top>
+        <div padding-top>
+          <div padding>
+              <img src="/assets/imgs/logoKoiHR.png" alt="logoKoiHR">
+          </div>  
+        </div>
       </div>
+      <div *ngIf="!iphoneX" class="colorFondo" padding>
+          <img src="/assets/imgs/logoKoiHR.png" alt="logoKoiHR">
+      </div> 
       <ion-toolbar>
         <ion-title>
   
@@ -16,8 +23,6 @@
       </ion-toolbar>
     </ion-header>
     <ion-content class="outer-content">
-  
-  
       <ion-list >
         <button ion-item *ngFor="let page of pages"
           (click)="goToPage(page.componente)" menuClose>

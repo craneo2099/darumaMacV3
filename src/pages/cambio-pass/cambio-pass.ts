@@ -17,6 +17,7 @@ export class CambioPassPage {
   private usuario;
   private token;
   public loader: any;
+  public iphoneX;
 
   constructor(public navCtrl: NavController,
   public navParams: NavParams,
@@ -43,6 +44,7 @@ export class CambioPassPage {
       ])),
       matching_passwords: this.matching_passwords_group
     });
+    this.iphoneX = navParams.get("iphoneX");
   }
 
   cambiarPass(){

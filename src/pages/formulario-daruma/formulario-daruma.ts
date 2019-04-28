@@ -15,6 +15,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 export class FormularioDarumaPage {
   public fecha
   public logdarumaForm: FormGroup
+  public iphoneX;
 
   constructor(public navCtrl: NavController,
     public formBuilder: FormBuilder,
@@ -26,6 +27,7 @@ export class FormularioDarumaPage {
           proposito: ['', Validators.compose([Validators.required])],
           nombreDaruma: ['', Validators.compose([Validators.required])]
       });
+      this.iphoneX = navParams.get("iphoneX")
   }
 
   logdaruForm(){

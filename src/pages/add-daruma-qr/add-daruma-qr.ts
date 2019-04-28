@@ -17,6 +17,7 @@ export class AddDarumaQrPage {
   private isFlashLightOn: boolean = false;
   private scanSub: any ;
   public loader: any;
+  public iphoneX;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -29,6 +30,7 @@ export class AddDarumaQrPage {
     public ds: DarumaServiceProvider) {
       this.loader = this.loadingCtrl.create();
       this.loader.present();
+      this.iphoneX = navParams.get("iphoneX");
   }
 
   ionViewWillEnter(){
@@ -74,7 +76,9 @@ export class AddDarumaQrPage {
                       let texto = "El codigo ya ha sido usado"
                       this.doAlert(titulo, texto)
                       // quitar comentario
-                      this.navCtrl.setRoot(DarumasGralPage)
+                      this.navCtrl.setRoot(DarumasGralPage,
+                        {iphoneX: this.iphoneX}
+                      )
                     }
                   }, error => {
                     console.log("Error isQrCodeAsignado",error);
@@ -85,7 +89,9 @@ export class AddDarumaQrPage {
                   let titulo = "Error!"
                   let texto = "El codigo es incorrecto"
                   this.doAlert(titulo, texto)
-                  this.navCtrl.setRoot(DarumasGralPage)
+                  this.navCtrl.setRoot(DarumasGralPage,
+                    {iphoneX: this.iphoneX}
+                  )
                 }
               }, error => {
                 console.log("Error isQrCodeRegistrado",error);
@@ -198,7 +204,9 @@ export class AddDarumaQrPage {
   }
 
   goToFormDaruma() {
-    this.navCtrl.push(FormularioDarumaPage);
+    this.navCtrl.push(FormularioDarumaPage,
+      {iphoneX: this.iphoneX}
+    );
   }
 
   ionViewDidLoad(){

@@ -136,10 +136,15 @@
 	</form>
 
 </ion-content>
-<!-- Footer -->
+<!-- footer -->
 <ion-footer>
   <ion-grid no-padding>
-    <ion-row no-padding>
+    <ion-row *ngIf="iphoneX" padding-bottom>
+      <div ion-col col-12 text-center no-padding>
+        <small>Powered by <strong>Devstar Novatech.</strong></small>
+      </div>
+    </ion-row>
+    <ion-row *ngIf="!iphoneX" no-padding>
       <div ion-col col-12 text-center no-padding>
         <small>Powered by <strong>Devstar Novatech.</strong></small>
       </div>
