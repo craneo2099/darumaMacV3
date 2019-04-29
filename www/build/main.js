@@ -791,20 +791,25 @@ var CambioPassPage = (function () {
             this.cambioPassForm.get('matching_passwords').get('passwordNC').hasError('required')) {
             // console.log("Completa todos los campos!!!");
             var texto = "Completa todos los campos!!!";
+            this.loader.dismiss();
             this.doAlert("Error!", texto, "");
         }
         else {
             if (this.cambioPassForm.get('passwordO').errors &&
                 this.cambioPassForm.get('passwordO').dirty) {
+                this.loader.dismiss();
                 this.doAlert("Error!!!", "Escribe el correo correctamente", "");
             }
             else if (this.cambioPassForm.get('matching_passwords').get('passwordN').hasError('minlength')) {
+                this.loader.dismiss();
                 this.doAlert("Error!!!", "Contrase\u00F1a: " + this.validation_messages.passwordN[1]["message"], "");
             }
             else if (this.cambioPassForm.get('matching_passwords').get('passwordN').hasError('maxlength')) {
+                this.loader.dismiss();
                 this.doAlert("Error!!!", "Contrase\u00F1a: " + this.validation_messages.passwordN[2]["message"], "");
             }
             else if (this.cambioPassForm.get('matching_passwords').hasError("areEqual")) {
+                this.loader.dismiss();
                 this.doAlert("Error!!!", "Contrase\u00F1a: " + this.validation_messages.matching_passwords[0]["message"], "");
             }
             else {
@@ -833,6 +838,7 @@ var CambioPassPage = (function () {
                         }
                     }, function (error) {
                         console.error("Error actualizarPass", error);
+                        _this.loader.dismiss();
                     });
                 }
             }
@@ -1683,6 +1689,8 @@ var InicioLoginPage = (function () {
                     }
                 }, function (error) {
                     console.log("errooor", error);
+                    _this.loader.dismiss();
+                    _this.doAlert("Error!!", "Prueba mas tarde...");
                 });
             }
         }
